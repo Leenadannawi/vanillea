@@ -1,35 +1,48 @@
-# Vanillea Project
-
-This project is a database management system for [brief description of your project]. 
+# Vanilleá - Perfume and Body Care Store
 
 ## Overview
-The system involves managing [mention key features, such as user data, car rental management, etc.].
+Vanilleá is an online store that offers perfumes, mists, and body care products inspired by the warm elegance of vanilla. The system allows users to log in based on their roles (Admin, Writer, Reader) and access different features based on their permissions. The project is built with **Node.js**, **PostgreSQL**, and **Vanilla JavaScript**.
+
+### Key Features
+- **Login System**: Users can log in with **Admin**, **Writer**, or **Reader** roles.
+- **Role-based Dashboard**: Each role has access to different sections of the site.
+  - **Admin**: Full access to all features (categories, products, orders, users, views).
+  - **Writer**: Access to categories, products, and orders.
+  - **Reader**: View-only access to categories, products, and orders.
+- **User Management**: Track failed login attempts and lock accounts after 3 failed attempts.
+- **Database Views**: Views for displaying user data and order details efficiently.
+
+---
 
 ## Technologies Used
-- **Database**: Oracle SQL
-- **Backend**: Node.js (or any backend technology you're using)
-- **Frontend**: [If you're using HTML/CSS/JS, mention it here]
+- **Backend**: Node.js with Express
+- **Database**: PostgreSQL
+- **Frontend**: HTML, CSS, Vanilla JavaScript
 
-## Setup
-1. Clone the repository:  
-   `git clone https://github.com/Leenadannawi/vanillea.git`
+---
 
-2. Install dependencies (if any):
-   - For Node.js: `npm install` (if using Node.js backend)
+## Project Structure
 
-3. [Add any other setup instructions specific to your project]
+### Backend
+- **`server.js`**: Handles the server logic, routes, and database connection.
+- **`users` table**: Stores user credentials and roles (admin, writer, reader).
+- **`orders` table**: Stores order information, including which user placed the order.
+- **Views**: 
+  - `view_user_orders`: Displays all orders with associated user details.
+  - `view_admin_summary`: Shows the number of orders per user.
+  - `view_products`: Lists products and their categories.
+  
+### Frontend
+- **Login Page**: A simple login page for users to enter their credentials.
+- **Dashboard**: Role-based dashboard that directs users to different sections (categories, products, orders).
+- **Views Page**: Displays user-specific data such as the order count and order total.
 
-## Usage
-Explain how users can use the project. For example:
-- How to log in
-- How to access different views
-- Any other instructions for navigating the system.
+---
 
-## Contributing
-If you'd like others to contribute, include guidelines here:
-- Fork the repository
-- Create a new branch for your feature
-- Submit a pull request
+## Setup Instructions
 
-## License
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+### Step 1: Clone the Repository
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/vanillea.git
